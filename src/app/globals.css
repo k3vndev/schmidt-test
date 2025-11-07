@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-darkest-blue: #01020D;
+
+  --color-fore-primary: #FFFFFF;
+  --color-fore-secondary: #F6F6F6;
+  --color-fore-terciary: rgba(231, 231, 231, 0.8);
+
+  /* Fonts */
+  --font-geist: var(--font-geist-sans), sans-serif;
+  --font-geist-mono: var(--font-geist-mono), monospace;
+  --font-basker: var(--font-baskervville), serif;
+  --font-plus: var(--font-plus-jakarta-sans), sans
 }
