@@ -1,11 +1,13 @@
+import { HeroTextInput } from '@/components/HeroTextInput'
 import { StarsSection } from '@/components/StarsSection'
-import { GoogleBrandIcon } from '@/icons'
+import { DiagonalArrowIcon, GoogleBrandIcon, MailIcon } from '@/icons'
 
 export default function Home() {
   return (
     <div className='w-screen min-h-screen h-screen flex flex-col'>
       <main className='w-full h-full relative flex flex-col items-center overflow-hidden'>
         <MainContent />
+        <InputsContainer />
 
         {/* Background */}
         <div className='size-[110%] *:size-full absolute top-1/2 left-1/2 -translate-1/2 *:absolute *:top-0 *:left-0 -z-10'>
@@ -37,7 +39,7 @@ const MainContent = () => (
       <span>PARTNER</span>
     </h1>
     <h2 className='text-fore-primary font-semibold font-geist text-[6.5rem]'>Real Estate Done Right.</h2>
-    <h3 className='text-fore-terciary font-semibold text-2xl tracking-widest font-geist'>
+    <h3 className='text-fore-terciary text-2xl tracking-widest font-geist'>
       PROFESSIONAL. TRANSPARENT. RELIABLE.
     </h3>
 
@@ -48,10 +50,29 @@ const MainContent = () => (
         <StarsSection />
       </div>
 
-      <small className='flex items-center gap-1 mt-2 font-plus'>
+      <small className='flex items-center gap-1.5 mt-2 font-plus'>
         <span className='text-fore-secondary font-geist tracking-normal'>+346 Reviews on</span>
         <GoogleBrandIcon className='text-fore-primary w-16 h-8' />
       </small>
     </div>
   </div>
 )
+
+const InputsContainer = () => {
+  return (
+    <div className='flex gap-4 items-center'>
+      <HeroTextInput label='Name' placeholder='John Doe'  />
+      <HeroTextInput
+        label='Email'
+        placeholder='user@example.com'
+        slot={<MailIcon className='text-fore-terciary size-6' />}
+      />
+      <HeroTextInput label='Phone' placeholder='000 000 0000' />
+
+      <button className='bg-white flex items-center gap-2 h-full px-7 button hover:brightness-90 ml-7'>
+        <span className='text-btn-primary-text font-plus'>Claim free consultation</span>
+        <DiagonalArrowIcon className='text-btn-primary-icons size-6 stroke-1' />
+      </button>
+    </div>
+  )
+}

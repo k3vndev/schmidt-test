@@ -7,9 +7,16 @@
   --color-fore-secondary: #F6F6F6;
   --color-fore-terciary: rgba(231, 231, 231, 0.8);
 
+  --color-btn-primary-text: #212121;
+  --color-btn-primary-icons: #5D5D5D;
+
   /* Fonts */
   --font-geist: var(--font-geist-sans), sans-serif;
   --font-geist-mono: var(--font-geist-mono), monospace;
   --font-basker: var(--font-baskervville), serif;
   --font-plus: var(--font-plus-jakarta-sans), sans
+}
+
+@utility button {
+  @apply not-disabled:cursor-pointer hover:brightness-[120%] transition-all active:scale-95 active:brightness-95 disabled:scale-100 disabled:brightness-50 disabled:pointer-events-none select-none;
 }

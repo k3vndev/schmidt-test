@@ -41,3 +41,37 @@ export const StarIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export const DiagonalArrowIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='32'
+    height='32'
+    viewBox='0 0 256 256'
+    fill='currentColor'
+    {...props}
+  >
+    <path d='M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z'></path>
+  </svg>
+)
+
+export const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' {...props}>
+    <path
+      d='M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z'
+      fill='none'
+      stroke='currentColor'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='16'
+    />
+    <polyline
+      points='224 56 128 144 32 56'
+      fill='none'
+      stroke='currentColor'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='16'
+    />
+  </svg>
+)
