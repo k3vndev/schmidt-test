@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { PROPERTIES } from '@/consts'
 import { ChevronIcon, DiagonalArrowIcon } from '@/icons'
+import { NavButton } from './NavButton'
 import { PropertyTile } from './PropertyTile'
 
 export const PropertiesSection = () => {
@@ -36,8 +37,8 @@ export const PropertiesSection = () => {
 
         <div className='flex items-center gap-7 not-lg:hidden'>
           <div className='flex items-center gap-4'>
-            <Button left onClick={() => navigate(-1)} />
-            <Button onClick={() => navigate(1)} />
+            <NavButton left onClick={() => navigate(-1)} />
+            <NavButton onClick={() => navigate(1)} />
           </div>
           <button className='flex font-plus items-center gap-2 text-nowrap bg-accent text-white px-8 py-4 button'>
             <span>Explore All</span>
@@ -51,28 +52,10 @@ export const PropertiesSection = () => {
         ref={scrollElementRef}
         style={{ gap: `${SCROLL_ELEMENT_GAP}px` }}
       >
-        {[...PROPERTIES, ...PROPERTIES, ...PROPERTIES, ...PROPERTIES, ...PROPERTIES, ...PROPERTIES].map(
-          (p, i) => (
-            <PropertyTile {...p} key={i} />
-          )
-        )}
+        {[...PROPERTIES, ...PROPERTIES].map((p, i) => (
+          <PropertyTile {...p} key={i} />
+        ))}
       </div>
     </section>
-  )
-}
-
-const Button = ({ left = false, onClick = () => {} }) => {
-  const orientation = left ? 'rotate-90' : '-rotate-90'
-
-  return (
-    <button
-      className={`
-        p-4 rounded-full border border-accent *:text-accent button
-        outline-2 outline-transparent hover:outline-accent
-      `}
-      {...{ onClick }}
-    >
-      <ChevronIcon className={`size-5 min-w-5 ${orientation}`} />
-    </button>
   )
 }
