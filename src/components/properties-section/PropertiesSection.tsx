@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import { twMerge } from 'tailwind-merge'
 import { PROPERTIES } from '@/consts'
 import { ChevronIcon, DiagonalArrowIcon } from '@/icons'
 import { NavButton } from './NavButton'
@@ -31,20 +32,11 @@ export const PropertiesSection = () => {
   return (
     <section className='w-full py-20 flex flex-col gap-16'>
       <header className='px-(--page-px) flex items-center justify-between not-lg:justify-center'>
-        <h2 className='lg:text-5xl text-3xl text-fore-[#212121] font-geist tracking-tighter'>
+        <h2 className='lg:text-5xl sm:text-4xl text-3xl text-fore-[#212121] font-geist tracking-tighter'>
           Featured Properties
         </h2>
 
-        <div className='flex items-center gap-7 not-lg:hidden'>
-          <div className='flex items-center gap-4'>
-            <NavButton left onClick={() => navigate(-1)} />
-            <NavButton onClick={() => navigate(1)} />
-          </div>
-          <button className='flex font-plus items-center gap-2 text-nowrap bg-accent text-white px-8 py-4 button'>
-            <span>Explore All</span>
-            <DiagonalArrowIcon className='size-5 min-w-5' />
-          </button>
-        </div>
+        <ButtonsAndControls navigate={navigate} className='not-lg:hidden' />
       </header>
 
       <div
@@ -56,6 +48,26 @@ export const PropertiesSection = () => {
           <PropertyTile {...p} key={i} />
         ))}
       </div>
+
+      <ButtonsAndControls navigate={navigate} className='lg:hidden justify-between px-(--page-px)' />
     </section>
   )
 }
+
+interface ButtonsAndControlsProps {
+  navigate: (direction: 1 | -1) => void
+  className?: string
+}
+
+const ButtonsAndControls = ({ navigate, className = '' }: ButtonsAndControlsProps) => (
+  <div className={twMerge(`flex items-center gap-7 ${className}`)}>
+    <div className='flex items-center gap-4'>
+      <NavButton left onClick={() => navigate(-1)} />
+      <NavButton onClick={() => navigate(1)} />
+    </div>
+    <button className='flex font-plus items-center gap-2 text-nowrap bg-accent text-white px-8 py-4 button'>
+      <span>Explore All</span>
+      <DiagonalArrowIcon className='size-5 min-w-5' />
+    </button>
+  </div>
+)

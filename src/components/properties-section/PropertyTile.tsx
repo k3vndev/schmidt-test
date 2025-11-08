@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export const PropertyTile = ({ name, imgUrl, desc, baths, beds, price, size }: Props) => (
-  <article className='flex flex-col gap-5 min-w-96 w-96'>
+  <article className='flex flex-col gap-5 lg:min-w-96 lg:w-96 min-w-80 w-80'>
     <header className='flex flex-col gap-px'>
       <h3 className='font-geist font-medium text-2xl tracking-tight truncate text-black/90'>{name}</h3>
       <span className='text-btn-primary-icons font-plus truncate'>
@@ -62,6 +62,6 @@ interface InfoItemProps {
 const InfoItem = ({ children, label }: InfoItemProps) => (
   <div className='flex items-center gap-2 text-btn-primary-icons'>
     {children}
-    <span className='font-plus text-sm'>{label}</span>
+    <span className='font-plus text-sm text-nowrap'>{label}</span>
   </div>
 )

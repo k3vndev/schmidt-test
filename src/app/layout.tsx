@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
+import { AppHeader } from '@/components/header/AppHeader'
 import { FONT_VARIABLES } from '@/consts'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Schmidt & Partner — Simplifying success globally',
-  description: 'Simplifying success globally'
+  description: 'Simplifying success globally',
+  icons: '/app-icon.png'
 }
 
 export default function RootLayout({
@@ -15,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${FONT_VARIABLES} antialiased overflow-x-hidden min-h-screen h-screen`}>
+        <AppHeader />
         {children}
       </body>
     </html>
