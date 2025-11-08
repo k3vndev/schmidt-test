@@ -3,7 +3,7 @@ import { StarsSection } from '../StarsSection'
 export const TrustCard = () => (
   <article
     className={`
-      w-full py-16 bg-darkest-blue 
+      w-full py-16 bg-accent-dark 
       flex items-center justify-center
     `}
   >

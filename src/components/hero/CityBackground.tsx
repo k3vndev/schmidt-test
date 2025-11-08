@@ -9,6 +9,6 @@ export const CityBackground = () => (
       className='blur-[2px]'
       style={{ background: 'url(/night-city-bg.webp) center / cover no-repeat lightgray' }}
     />
-    <div className='bg-linear-to-b from-0% from-darkest-blue/25 via-75% via-darkest-blue/90 to-100% to-darkest-blue'></div>
+    <div className='bg-linear-to-b from-0% from-accent-dark/25 via-75% via-accent-dark/90 to-100% to-accent-dark'></div>
   </div>
 )

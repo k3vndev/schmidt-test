@@ -63,8 +63,8 @@ const TextInput = ({ placeholder, label, className = '', slot }: TextInputProps)
 
     <div
       className={`
-        flex gap-2 items-center border-b border-white/30 transition
-        focus-within:border-fore-secondary py-2 px-1
+        flex gap-2 items-center border-b border-white/15 transition
+        focus-within:border-fore-terciary py-2 px-1
       `}
     >
       {slot}

@@ -17,8 +17,15 @@
   }
 }
 
+@media (min-width: 1280px) {
+  :root {
+    --page-px: 12rem;
+  }
+}
+
 @theme inline {
-  --color-darkest-blue: #01020D;
+  --color-accent-dark: #01020D;
+  --color-accent: #001489;
 
   --color-fore-primary: #FFFFFF;
   --color-fore-secondary: #F6F6F6;
@@ -36,4 +43,13 @@
 
 @utility button {
   @apply not-disabled:cursor-pointer hover:brightness-[120%] transition-all active:scale-95 active:brightness-95 disabled:scale-100 disabled:brightness-50 disabled:pointer-events-none select-none;
+}
+
+@utility scrollbar-hide {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
