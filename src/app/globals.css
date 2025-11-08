@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+  --page-px: 1rem;
+  --header-h: 6rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-px: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-px: 4rem;
+  }
+}
+
 @theme inline {
   --color-darkest-blue: #01020D;
 

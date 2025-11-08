@@ -5,10 +5,22 @@ import { TrustCard } from '@/components/hero/TrustCard'
 
 export default function Home() {
   return (
-    <div className='w-screen min-h-screen h-screen flex flex-col'>
-      <main className='w-full h-full relative flex flex-col items-center overflow-hidden'>
-        <MainContent />
-        <InputsContainer />
+    <div className='w-screen xl:h-full flex flex-col'>
+      <main
+        className={`
+          w-full h-full relative flex flex-col
+          items-center overflow-hidden
+        `}
+      >
+        <div
+          className={`
+            mt-(--header-h) w-full h-full flex flex-col items-center
+            not-xl:px-(--page-px) not-xl:py-10
+          `}
+        >
+          <MainContent />
+          <InputsContainer />
+        </div>
 
         <CityBackground />
       </main>

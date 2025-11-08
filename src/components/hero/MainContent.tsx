@@ -1,35 +1,37 @@
-import { GoogleBrandIcon } from '@/icons'
-import { StarsSection } from '../StarsSection'
+import { GoogleReviews } from './GoogleReviews'
 
 export const MainContent = () => (
-  <div className='flex flex-col items-center justify-center w-full h-full -tracking-widest'>
+  <div
+    className={`
+      flex flex-col lg:items-center items-start justify-center
+      w-full h-full -tracking-widest not-xl:py-10 xl:gap-5
+    `}
+  >
     {/* Text & Headers */}
-    <h1
+    <h2
       className={`
-        text-fore-primary text-2xl tracking-[0.5rem] font-basker
-        flex items-center gap-3 leading-0
+        text-fore-primary lg:text-2xl sm:text-xl tracking-[0.5rem] font-basker
+        flex items-center gap-3
       `}
     >
       <span>SCHMIDT</span>
       <span>&</span>
       <span>PARTNER</span>
+    </h2>
+    <h1
+      className={`
+        text-fore-primary font-semibold font-geist lg:text-[6.5rem] sm:text-7xl text-6xl
+        flex items-center xl:gap-4 text-nowrap not-xl:flex-col lg:leading-26
+        xl:my-0 lg:my-8 my-4
+      `}
+    >
+      <span>Real Estate</span>
+      <span>Done Right.</span>
     </h1>
-    <h2 className='text-fore-primary font-semibold font-geist text-[6.5rem]'>Real Estate Done Right.</h2>
-    <h3 className='text-fore-terciary text-2xl tracking-widest font-geist'>
+    <h2 className='text-fore-terciary lg:text-2xl sm:text-xl text-lg tracking-widest font-geist'>
       PROFESSIONAL. TRANSPARENT. RELIABLE.
-    </h3>
+    </h2>
 
-    {/* Stars */}
-    <div className='flex text-center items-center gap-4 mt-16'>
-      <div className='flex items-center gap-2'>
-        <span className='text-fore-primary font-semibold font-geist text-xl leading-0'>4.5</span>
-        <StarsSection />
-      </div>
-
-      <small className='flex items-center gap-1.5 mt-2 font-plus'>
-        <span className='text-fore-secondary font-geist tracking-normal'>+346 Reviews on</span>
-        <GoogleBrandIcon className='text-fore-primary w-16 h-8' />
-      </small>
-    </div>
+    <GoogleReviews className='not-xl:hidden mt-16' />
   </div>
 )
